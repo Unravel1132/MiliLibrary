@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .details-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+
+        .details-image {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .details-image img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .details-info {
+            flex: 1;
+        }
+
+        .details-info h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .details-info p {
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .download-button {
+            display: block;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .download-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Book Details</h1>
+    <div class="details-container">
+        <div class="details-image">
+            <img src="/images/book_image.jpg" alt="Book Image">
+        </div>
+        <div class="details-info">
+            <h2>Title: A Philosophical Discourse on Method</h2>
+            <p>Author: René Descartes</p>
+            <p>Price: $20</p>
+            <p>Description: A philosophical treatise published by René Descartes in 1637 in Leiden. It is considered a groundbreaking work that marked the transition from Renaissance philosophy and initiated the era of modern philosophy and contemporary scientific knowledge.</p>
+            <a href="/download-pdf" class="download-button" target="_blank">Download PDF</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
