@@ -32,7 +32,7 @@ public class BookController {
     public String getBookById(@PathVariable Long id, Model model) {
         Book book = bookService.getBookById(id);
         model.addAttribute("book", book);
-        return "book-details"; // Имя представления для отображения деталей книги
+        return "book1_details.html"; // Имя представления для отображения деталей книги
     }
 
     @PostMapping("/books/save")
