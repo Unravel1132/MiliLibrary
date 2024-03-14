@@ -1,218 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini Library - Book List</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        /* Ваш CSS здесь */
-
+    <title>Философские книги</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <style type="text/css">
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
             margin: 0;
             padding: 0;
         }
-
-        .container {
-            width: 80%;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
             text-align: center;
-            color: #333;
         }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-            text-align: left;
-        }
-
-        th {
+        nav {
+            float: left;
+            width: 20%;
             background-color: #f2f2f2;
-        }
-
-        td:last-child {
-            text-align: center;
-        }
-
-        .add-button, .delete-button, .details-button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 14px;
-            margin-right: 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .add-button:hover, .delete-button:hover, .details-button:hover {
-            background-color: #45a049;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0, 0, 0);
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 10% auto;
             padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            animation-name: modalopen;
-            animation-duration: 0.5s;
         }
-
-        @keyframes modalopen {
-            from { opacity: 0 }
-            to { opacity: 1 }
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .close:hover, .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .add-button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
+        main {
+            float: left;
+            width: 60%;
+            padding: 20px;
             text-align: center;
-            text-decoration: none;
+        }
+        .book {
             display: inline-block;
-            font-size: 18px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
+            width: 150px;
+            height: 200px;
+            margin: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 10px;
         }
-
-        .add-button:hover {
-            background-color: #45a049;
-            transform: scale(1.05);
+        aside {
+            float: left;
+            width: 20%;
+            background-color: #f2f2f2;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            text-align: center;
         }
-
-        .add-button:active {
-            background-color: #4CAF50;
-            transform: scale(0.95);
+        footer {
+            clear: both;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
-
+        .subscribe {
+            font-size: smaller;
+            margin-top: 10px;
+            float: left;
+            margin-left: 20px;
+        }
+        .social {
+            float: left;
+            margin-left: 20px;
+        }
     </style>
 </head>
 <body>
-<div class="container">
-    <h1>Ортодоксальная философия</h1>
-    <!-- Поисковая строка -->
-    <div class="search-container">
-        <form id="searchForm" action="/books/search" method="get">
-            <input type="search" id="searchInput" name="title" placeholder="Поиск по книгам...">
-            <button type="submit"><i class="fas fa-search"></i></button>
-        </form>
+<header>
+    <h1>Философские книги</h1>
+    <form action="#" method="get">
+        <input type="text" name="search" placeholder="Поиск книги">
+        <input type="submit" value="Найти">
+    </form>
+</header>
+<nav>
+    <h2>Категории</h2>
+    <ul>
+        <li><a href="empirica_books.html">Эмпирика</a></li>
+        <li><a href="rationalism_books.html">Рационализм</a></li>
+        <li><a href="marxism_books.html">Марксизм</a></li>
+        <li><a href="theology_books.html">Теология</a></li>
+        <li><a href="idealism_books.html">Идеализм</a></li>
+    </ul>
+
+</nav>
+<main>
+    <div class="book">
+        <a href="book1_details.html"><img src="/images/book1.jpg" alt="Book 1"></a>
+        <h3>Название книги</h3>
+        <p>Описание книги</p>
     </div>
-    <table>
-        <thead>
-        <tr>
-            <th>Название</th>
-            <th>Цена</th>
-            <th>Жанр</th>
-            <th>Действие</th>
-        </tr>
-        </thead>
-        <tbody>
-        <!-- Book items will be inserted here -->
-        <tr th:each="book : ${books}">
-            <td th:text="${book.title}"></td>
-            <td th:text="${book.price}"></td>
-            <td>Жанр книги</td> <!-- Замените "Жанр книги" на соответствующий текст -->
-            <td>
-                <a th:href="@{/books/{id}(id=${book.id})}" class="details-button">
-                    <i class="fas fa-info-circle"></i> Подробнее
-                </a>
-                <!-- Форма для удаления книги -->
-                <form id="deleteBookForm_${book.id}" action="/delete/${book.id}" method="post">
-                    <input type="hidden" name="_method" value="delete">
-                    <button type="submit" class="delete-button">
-                        <i class="fas fa-trash-alt"></i> Удалить
-                    </button>
-                </form>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-    <button class="add-button" onclick="openAddBookForm()" onmouseover="buttonHover(this)" onmouseout="buttonHover(this)">
-        <i class="fas fa-plus-circle"></i> Добавить новую книгу
-    </button>
-</div>
-
-<div id="addBookModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeAddBookForm()">&times;</span>
-        <h2>Add New Book</h2>
-        <form id="addBookFormModal" action="/books/save" method="post">
-            <input type="text" id="titleModal" name="title" placeholder="Title" required>
-            <input type="text" id="authorModal" name="author" placeholder="Author" required>
-            <input type="text" id="genreModal" name="genre" placeholder="Genre" required> <!-- Add input field for genre -->
-            <input type="number" id="priceModal" name="price" placeholder="Price" min="0" step="0.01" required>
-            <button type="submit">Add</button>
-        </form>
-
+    <div class="book">
+        <a href="book2_details.html"><img src="/images/book2.jpg" alt="Book 2"></a>
+        <h3>Название книги</h3>
+        <p>Описание книги</p>
     </div>
-</div>
+    <div class="book">
+        <a href="book3_details.html"><img src="/images/book3.jpg" alt="Book 3"></a>
+        <h3>Название книги</h3>
+        <p>Описание книги</p>
+    </div>
+    <div class="book">
+        <a href="book4_details.html"><img src="/images/book4.jpg" alt="Book 4"></a>
+        <h3>Название книги</h3>
+        <p>Описание книги</p>
+    </div>
+    <div class="book">
+        <a href="book5_details.html"><img src="/images/book5.jpg" alt="Book 5"></a>
+        <h3>Название книги</h3>
+        <p>Описание книги</p>
+    </div>
+    <div class="book">
+        <a href="book6_details.html"><img src="/images/book6.jpg" alt="Book 6"></a>
+        <h3>Название книги</h3>
+        <p>Описание книги</p>
+    </div>
+    <div class="book">
+        <a href="book7_details.html"><img src="/images/book7.jpg" alt="Book 7"></a>
+        <h3>Название книги</h3>
+        <p>Описание книги</p>
+    </div>
+    <div class="book">
+        <a href="book8_details.html"><img src="/images/book8.jpg" alt="Book 8"></a>
+        <h3>Название книги</h3>
+        <p>Описание книги</p>
+    </div>
 
-<script src="scripts.js"></script>
-<script>
-    function openAddBookForm() {
-        document.getElementById("addBookModal").style.display = "block";
-    }
-
-    function closeAddBookForm() {
-        document.getElementById("addBookModal").style.display = "none";
-    }
-
-    // Функция для подтверждения удаления книги
-    function confirmDelete(bookId) {
-        if (confirm("Вы уверены, что хотите удалить эту книгу?")) {
-            document.getElementById("deleteBookForm_" + bookId).submit();
-        }
-    }
-</script>
+</main>
+<aside>
+    <!-- Иконки социальных сетей -->
+    <div class="subscribe">Подписаться</div>
+    <div class="social">
+        <a href="#"><img src="/images/facebook_icon.png" alt="Facebook"></a>
+        <a href="#"><img src="/images/vk_icon.png" alt="VK"></a>
+        <!-- Добавьте другие иконки соц. сетей здесь -->
+    </div>
+</aside>
+<footer>
+    <p>&copy; 2024 Философские книги</p>
+</footer>
 </body>
 </html>
