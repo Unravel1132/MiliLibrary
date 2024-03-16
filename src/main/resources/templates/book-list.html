@@ -194,25 +194,42 @@
             <button type="submit">Add</button>
         </form>
 
+
     </div>
 </div>
 
 <script src="scripts.js"></script>
 <script>
-    function openAddBookForm() {
-        document.getElementById("addBookModal").style.display = "block";
+    // Функция для выполнения AJAX-запроса на сервер
+    function searchBooks() {
+        // Получаем значение из поля ввода поиска
+        var searchInput = document.getElementById("searchResults").innerHTML = xhr.responseText;
+
+
+        // Создаем новый XMLHttpRequest-объект
+        var xhr = new XMLHttpRequest();
+
+        // Устанавливаем метод запроса, URL и асинхронность
+        xhr.open("GET", "/books/search?title=" + searchInput, true);
+
+        // Устанавливаем обработчик события загрузки
+        xhr.onload = function () {
+            // Проверяем успешность запроса
+            if (xhr.status >= 200 && xhr.status < 300) {
+                // Обновляем содержимое таблицы с результатами поиска
+                document.getElementById("searchResults").innerHTML = xhr.responseText;
+            } else {
+                // В случае ошибки выводим сообщение об ошибке
+                console.error('Request failed:', xhr.statusText);
+            }
+        };
+
+        // Отправляем запрос на сервер
+        xhr.send();
     }
 
-    function closeAddBookForm() {
-        document.getElementById("addBookModal").style.display = "none";
-    }
-
-    // Функция для подтверждения удаления книги
-    function confirmDelete(bookId) {
-        if (confirm("Вы уверены, что хотите удалить эту книгу?")) {
-            document.getElementById("deleteBookForm_" + bookId).submit();
-        }
-    }
+    // Устанавливаем обработчик события изменения значения в поле поиска
+    document.getElementById("searchInput").addEventListener("input", searchBooks);
 </script>
 </body>
 </html>
